@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jerry's Engineering Portfolio</title>
+    <link rel="icon" type="image/png" href="image/logo.jpg">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            <img src="image/logo.jpg" alt="JW Logo" class="nav-logo-icon">
+            <div>Jerry's <span>Engineering Portfolio</span></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="mailto:jerrycywong@gmail.com" class="contact-link">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header id="home" class="hero">
+        <canvas id="hero-canvas"></canvas>
+        
+        <div class="hero-content fade-in">
+            <h1>Hello, I'm an <span class="highlight">Engineer</span>.</h1>
+            <p>I build robots, solve complex problems, and bring ideas to life.</p>
+            <p class="sub-text">Alumni of FTC 19498 and Dr. Norman Bethune C.I.</p>
+            <a href="#projects" class="btn">View My Work</a>
+        </div>
+    </header>
+
+    <section id="about" class="container section">
+        <h2 class="section-title slide-in-left">About Me</h2>
+        <div class="about-grid fade-in">
+            <div class="about-text">
+                <p>I am an engineer with a passion for robotics, mechanical design, and automation. With experience in CAD modeling, prototyping, and systems integration, I thrive at the intersection of hardware and software.</p>
+            </div>
+            <div class="about-image-container">
+                <img src="your-profile-pic.jpg" alt="Jerry working on a robot" class="responsive-img">
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="container section bg-darker">
+        <h2 class="section-title fade-in">My Projects</h2>
+        
+        <div class="grid">
+            
+            <div class="card fade-in project-card" onclick="openModal('modal-swerve')">
+                <div class="project-image-container"><img src="placeholder.jpg" alt="Swerve" class="responsive-img"></div>
+                <div class="card-content">
+                    <h3>Co-axial Swerve Drive</h3>
+                    <span class="btn-text">View Details &rarr;</span>
+                </div>
+            </div>
+
+            <div class="card fade-in project-card" onclick="openModal('modal-drone')">
+                <div class="project-image-container"><img src="placeholder.jpg" alt="DIY Drone" class="responsive-img"></div>
+                <div class="card-content">
+                    <h3>Custom DIY Drone</h3>
+                    <span class="btn-text">View Details &rarr;</span>
+                </div>
+            </div>
+
+            <div class="card fade-in project-card" onclick="openModal('modal-v2')">
+                <div class="project-image-container"><img src="image/robot v2.png" alt="Decode V2" class="responsive-img"></div>
+                <div class="card-content">
+                    <h3>FTC Decode Robot V2</h3>
+                    <span class="btn-text">View Details &rarr;</span>
+                </div>
+            </div>
+
+            <div class="card fade-in project-card" onclick="openModal('modal-arise')">
+                <div class="project-image-container"><img src="placeholder.jpg" alt="ARISE Simulator" class="responsive-img"></div>
+                <div class="card-content">
+                    <h3>ARISE FLL Simulator</h3>
+                    <span class="btn-text">View Details &rarr;</span>
+                </div>
+            </div>
+
+            <div class="card fade-in project-card" onclick="openModal('modal-cad')">
+                <div class="project-image-container"><img src="placeholder.jpg" alt="CAD Library" class="responsive-img"></div>
+                <div class="card-content">
+                    <h3>Open-Source Parametric FTC CAD</h3>
+                    <span class="btn-text">View Details &rarr;</span>
+                </div>
+            </div>
+            
+            <div class="card fade-in project-card" onclick="openModal('modal-v1')">
+                <div class="project-image-container"><img src="image/robot v1.png" alt="Decode V1" class="responsive-img"></div>
+                <div class="card-content">
+                    <h3>FTC Decode Robot V1</h3>
+                    <span class="btn-text">View Details &rarr;</span>
+                </div>
+            </div>
+
+            <div class="card fade-in project-card" onclick="openModal('modal-v0')">
+                <div class="project-image-container"><img src="placeholder.jpg" alt="Decode V0 Prototype" class="responsive-img"></div>
+                <div class="card-content">
+                    <h3>FTC Decode Prototype (V0)</h3>
+                    <span class="btn-text">View Details &rarr;</span>
+                </div>
+            </div>
+
+            <div class="card fade-in project-card" onclick="openModal('modal-microbit')">
+                <div class="project-image-container"><img src="image/microbit.jpg" alt="micro:bit car" class="responsive-img"></div>
+                <div class="card-content">
+                    <h3>Wireless micro:bit Car</h3>
+                    <span class="btn-text">View Details &rarr;</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div id="modal-swerve" class="modal">
+        <div class="modal-content"><span class="close-btn" onclick="closeModal('modal-swerve')">&times;</span><h2>Co-axial Swerve Drive</h2><p>[Project description...]</p></div>
+    </div>
+
+    <div id="modal-cad" class="modal">
+        <div class="modal-content"><span class="close-btn" onclick="closeModal('modal-cad')">&times;</span><h2>Open-Source Parametric FTC CAD</h2><p>[Project description...]</p></div>
+    </div>
+
+    <div id="modal-arise" class="modal">
+        <div class="modal-content"><span class="close-btn" onclick="closeModal('modal-arise')">&times;</span><h2>ARISE FLL Simulator</h2><p>[Project description...]</p></div>
+    </div>
+
+    <div id="modal-v2" class="modal">
+        <div class="modal-content"><span class="close-btn" onclick="closeModal('modal-v2')">&times;</span><h2>FTC Decode Robot V2</h2><p>[Project description...]</p></div>
+    </div>
+
+    <div id="modal-v1" class="modal">
+        <div class="modal-content"><span class="close-btn" onclick="closeModal('modal-v1')">&times;</span><h2>FTC Decode Robot V1</h2><p>[Project description...]</p></div>
+    </div>
+
+    <div id="modal-v0" class="modal">
+        <div class="modal-content"><span class="close-btn" onclick="closeModal('modal-v0')">&times;</span><h2>FTC Decode Prototype (V0)</h2><p>Initial proof of concept focusing on basic chassis mechanics and layout...</p></div>
+    </div>
+
+    <div id="modal-drone" class="modal">
+        <div class="modal-content"><span class="close-btn" onclick="closeModal('modal-drone')">&times;</span><h2>Custom DIY Drone</h2><p>[Project description...]</p></div>
+    </div>
+
+    <div id="modal-microbit" class="modal">
+        <div class="modal-content"><span class="close-btn" onclick="closeModal('modal-microbit')">&times;</span><h2>Wireless micro:bit Car</h2><p>[Project description...]</p></div>
+    </div>
+
+    <section id="achievements" class="container section">
+        <h2 class="section-title slide-in-left">Achievements</h2>
+        <div class="achievement-container fade-in">
+            <div class="achievement-content">
+                <ul class="achievement-list">
+                    <li>🏆 2025 FTC Ontario Championship Winner + Canada Record Holder</li>
+                    <li>🥇 2025 FTC Waterloo + Central Toronto Qualifier Winner</li>
+                    <li>📐 2024 AIME Qualifier, 3x COMC, 1x CSMC School Champion</li>
+                </ul>
+            </div>
+            
+            <div class="achievement-image">
+                <img src="image/provs.jpg" alt="FTC Championship Trophy" class="responsive-img shadow-effect">
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-content fade-in">
+            <h2>Let's Connect</h2>
+            <p>Email: <a href="mailto:jerrycywong@gmail.com" class="footer-email">jerrycywong@gmail.com</a></p>
+            <div class="socials">
+                <a href="https://www.linkedin.com/in/jerry-wong-251589347/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/lptoggled" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="mailto:jerrycywong@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://discord.com/users/YOUR_DISCORD_ID" target="_blank" aria-label="Discord"><i class="fab fa-discord"></i></a>
+            </div>
+            <p class="copyright">&copy; 2026 Jerry Wong. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
