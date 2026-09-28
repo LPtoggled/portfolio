@@ -39,28 +39,58 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // 2. NAVBAR + PARALLAX
     const nav = document.querySelector('nav');
+    const themeToggle = document.getElementById('theme-toggle');
+    const root = document.documentElement;
+    const storedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    // Make light mode the default on first visit; respect saved selection if present
+    const initialTheme = storedTheme || 'light';
 
-    window.addEventListener('scroll', () => {
-        const scrollY = window.scrollY;
+    function applyTheme(name) {
+        root.setAttribute('data-theme', name);
+        if (!themeToggle) return;
+        themeToggle.innerHTML = name === 'dark'
+            ? '<i class="fa-solid fa-sun"></i>'
+            : '<i class="fa-solid fa-moon"></i>';
+        themeToggle.setAttribute('aria-label', name === 'dark' ? 'Enable light mode' : 'Enable dark mode');
+        themeToggle.title = name === 'dark' ? 'Enable light mode' : 'Enable dark mode';
+    }
 
-        // Dot parallax
-        document.documentElement.style.backgroundPositionY = `${scrollY * 0.3}px`;
-
-        // Progressive navbar darkening
+    function updateNavAppearance(scrollY = window.scrollY) {
         const progress = Math.min(scrollY / 300, 1);
         const bgOpacity = (0.4 + progress * 0.5).toFixed(3);
         const padV = (1.2 - progress * 0.4).toFixed(3);
+        const navBaseRgb = getComputedStyle(document.documentElement).getPropertyValue('--nav-base-rgb').trim() || '10, 10, 10';
 
-        nav.style.background = `rgba(10, 10, 10, ${bgOpacity})`;
+        nav.style.background = `rgba(${navBaseRgb}, ${bgOpacity})`;
         nav.style.padding = `${padV}rem 5%`;
 
-        // Border fades in after 30% scroll — always rgba so no white flash
         if (progress > 0.3) {
             const borderOpacity = ((progress - 0.3) * 0.5).toFixed(3);
             nav.style.borderBottom = `1px solid rgba(174, 150, 212, ${borderOpacity})`;
         } else {
             nav.style.borderBottom = `1px solid rgba(174, 150, 212, 0)`;
         }
+    }
+
+    applyTheme(initialTheme);
+    updateNavAppearance();
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const nextTheme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            applyTheme(nextTheme);
+            localStorage.setItem('theme', nextTheme);
+            updateNavAppearance();
+        });
+    }
+
+    window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+
+        // Dot parallax
+        document.documentElement.style.backgroundPositionY = `${scrollY * 0.3}px`;
+        updateNavAppearance(scrollY);
 
         // Hero content fade on scroll
         const heroHeight = document.querySelector('.hero').offsetHeight;

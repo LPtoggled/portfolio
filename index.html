@@ -6,30 +6,36 @@
     <title>Jerry's Engineering Portfolio</title>
     <link rel="icon" type="image/png" href="image/logo.jpg">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <nav>
         <div class="logo">
-            <img src="image/logo.jpg" alt="JW Logo" class="nav-logo-icon">
             <div>Jerry's <span>Engineering Portfolio</span></div>
         </div>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#achievements">Achievements</a></li>
-            <li><a href="mailto:jerrycywong@gmail.com" class="contact-link">Contact</a></li>
-        </ul>
+        <div class="nav-actions">
+            <ul class="nav-links">
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="mailto:j444wong@gmail.com" class="contact-link">Contact</a></li>
+            </ul>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Enable dark mode" title="Toggle light/dark mode">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </div>
     </nav>
 
     <header id="home" class="hero">
         <canvas id="hero-canvas"></canvas>
         
         <div class="hero-content fade-in">
-            <h1>Hello, I'm an <span class="highlight">Engineer</span>.</h1>
-            <p>I build robots, solve complex problems, and bring ideas to life.</p>
+            <h1>Hello, I'm <span class="highlight">Jerry Wong</span></h1>
+            <p>I'm a passionate engineer with experience in robotics, mechanical design, and automation.</p>
             <p class="sub-text">Alumni of FTC 19498 and Dr. Norman Bethune C.I.</p>
             <a href="#projects" class="btn">View My Work</a>
         </div>
@@ -39,7 +45,7 @@
         <h2 class="section-title slide-in-left">About Me</h2>
         <div class="about-grid fade-in">
             <div class="about-text">
-                <p>I am an engineer with a passion for robotics, mechanical design, and automation. With experience in CAD modeling, prototyping, and systems integration, I thrive at the intersection of hardware and software.</p>
+                <p>I have led a team of 13 to the FIRST Championship and currently study AMath at University of Waterloo</p>
             </div>
             <div class="about-image-container">
                 <img src="your-profile-pic.jpg" alt="Jerry working on a robot" class="responsive-img">
@@ -60,22 +66,6 @@
                 </div>
             </div>
 
-            <div class="card fade-in project-card" onclick="openModal('modal-drone')">
-                <div class="project-image-container"><img src="placeholder.jpg" alt="DIY Drone" class="responsive-img"></div>
-                <div class="card-content">
-                    <h3>Custom DIY Drone</h3>
-                    <span class="btn-text">View Details &rarr;</span>
-                </div>
-            </div>
-
-            <div class="card fade-in project-card" onclick="openModal('modal-v2')">
-                <div class="project-image-container"><img src="image/robot v2.png" alt="Decode V2" class="responsive-img"></div>
-                <div class="card-content">
-                    <h3>FTC Decode Robot V2</h3>
-                    <span class="btn-text">View Details &rarr;</span>
-                </div>
-            </div>
-
             <div class="card fade-in project-card" onclick="openModal('modal-arise')">
                 <div class="project-image-container"><img src="placeholder.jpg" alt="ARISE Simulator" class="responsive-img"></div>
                 <div class="card-content">
@@ -87,23 +77,15 @@
             <div class="card fade-in project-card" onclick="openModal('modal-cad')">
                 <div class="project-image-container"><img src="image/onshape.png" alt="CAD Library" class="responsive-img"></div>
                 <div class="card-content">
-                    <h3>Open-Source Parametric FTC CAD</h3>
-                    <span class="btn-text">View Details &rarr;</span>
-                </div>
-            </div>
-            
-            <div class="card fade-in project-card" onclick="openModal('modal-v1')">
-                <div class="project-image-container"><img src="image/robot v1.png" alt="Decode V1" class="responsive-img"></div>
-                <div class="card-content">
-                    <h3>FTC Decode Robot V1</h3>
+                    <h3>Open-Source Configurable FTC CAD</h3>
                     <span class="btn-text">View Details &rarr;</span>
                 </div>
             </div>
 
-            <div class="card fade-in project-card" onclick="openModal('modal-v0')">
-                <div class="project-image-container"><img src="placeholder.jpg" alt="Decode V0 Prototype" class="responsive-img"></div>
+            <div class="card fade-in project-card" onclick="openModal('modal-ftc')">
+                <div class="project-image-container"><img src="image/robot v2.png" alt="FTC Decode Robot" class="responsive-img"></div>
                 <div class="card-content">
-                    <h3>FTC Decode Prototype (V0)</h3>
+                    <h3>FTC Decode Robot</h3>
                     <span class="btn-text">View Details &rarr;</span>
                 </div>
             </div>
@@ -111,7 +93,23 @@
             <div class="card fade-in project-card" onclick="openModal('modal-microbit')">
                 <div class="project-image-container"><img src="image/microbit.jpg" alt="micro:bit car" class="responsive-img"></div>
                 <div class="card-content">
-                    <h3>Wireless micro:bit Car</h3>
+                    <h3>RC micro:bit car</h3>
+                    <span class="btn-text">View Details &rarr;</span>
+                </div>
+            </div>
+
+            <div class="card fade-in project-card" onclick="openModal('modal-5dof')">
+                <div class="project-image-container"><img src="placeholder.jpg" alt="5 DOF Autonomous Arm" class="responsive-img"></div>
+                <div class="card-content">
+                    <h3>5 DOF Autonomous Arm</h3>
+                    <span class="btn-text">View Details &rarr;</span>
+                </div>
+            </div>
+
+            <div class="card fade-in project-card" onclick="openModal('modal-racecar')">
+                <div class="project-image-container"><img src="placeholder.jpg" alt="RC Race Car" class="responsive-img"></div>
+                <div class="card-content">
+                    <h3>RC Race Car</h3>
                     <span class="btn-text">View Details &rarr;</span>
                 </div>
             </div>
@@ -120,35 +118,213 @@
     </section>
 
     <div id="modal-swerve" class="modal">
-        <div class="modal-content"><span class="close-btn" onclick="closeModal('modal-swerve')">&times;</span><h2>Co-axial Swerve Drive</h2><p>[Project description...]</p></div>
-    </div>
-
-    <div id="modal-cad" class="modal">
-        <div class="modal-content"><span class="close-btn" onclick="closeModal('modal-cad')">&times;</span><h2>Open-Source Parametric FTC CAD</h2><p>[Project description...]</p></div>
+        <div class="modal-content">
+            <div class="modal-header">
+            <span class="close-btn" onclick="closeModal('modal-swerve')">&times;</span>
+            <h2>Co-axial Swerve Drive</h2>
+            </div>
+            <div class="modal-body">
+            <div class="modal-layout">
+                <div class="modal-media">
+                    <img src="placeholder.jpg" alt="Co-axial swerve drive module" class="responsive-img">
+                </div>
+                <div class="modal-text">
+                    <p class="modal-meta">Summer 2025 · Mechanical design + programming</p>
+                    <p>An FTC-legal swerve module — drive and steering share one axis, so each wheel rotates a full 360&deg;. I designed the module in CAD (Fusion 360 / Onshape) and wrote the control code in Java.</p>
+                    <p>An absolute encoder on the steering axis means the robot always knows its wheel orientation on boot — no homing routine. Steering runs on PID loops tuned against encoder feedback.</p>
+                    <table class="spec-table">
+                        <tr><th>Steering latency</th><td>0.1 s</td></tr>
+                        <tr><th>Top speed</th><td>3.5 m/s</td></tr>
+                        <tr><th>Motors</th><td>goBILDA</td></tr>
+                        <tr><th>Control hub</th><td>REV Control Hub</td></tr>
+                    </table>
+                </div>
+            </div>
+            </div>
+        </div>
     </div>
 
     <div id="modal-arise" class="modal">
-        <div class="modal-content"><span class="close-btn" onclick="closeModal('modal-arise')">&times;</span><h2>ARISE FLL Simulator</h2><p>[Project description...]</p></div>
+        <div class="modal-content">
+            <div class="modal-header">
+            <span class="close-btn" onclick="closeModal('modal-arise')">&times;</span>
+            <h2>ARISE FLL Simulator</h2>
+            </div>
+            <div class="modal-body">
+            <div class="modal-layout">
+                <div class="modal-media">
+                    <img src="placeholder.jpg" alt="ARISE FLL Simulator" class="responsive-img">
+                </div>
+                <div class="modal-text">
+                    <p class="modal-meta">Solo project · Unity (C#)</p>
+                    <p>A simulator for FLL teams. Build a robot from virtual parts, write code for it, and run autonomous routines on a virtual field — all before touching physical hardware.</p>
+                    <p>Handy for testing strategies and iterating on autonomous programs without needing the robot in front of you.</p>
+                </div>
+            </div>
+            </div>
+        </div>
     </div>
 
-    <div id="modal-v2" class="modal">
-        <div class="modal-content"><span class="close-btn" onclick="closeModal('modal-v2')">&times;</span><h2>FTC Decode Robot V2</h2><p>[Project description...]</p></div>
+    <div id="modal-cad" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+            <span class="close-btn" onclick="closeModal('modal-cad')">&times;</span>
+            <h2>Open-Source Parametric FTC CAD</h2>
+            </div>
+            <div class="modal-body">
+            <div class="modal-layout">
+                <div class="modal-media">
+                    <img src="image/onshape.png" alt="Parametric CAD library" class="responsive-img">
+                </div>
+                <div class="modal-text">
+                    <p class="modal-meta">Onshape configurations · Open source</p>
+                    <p>A parametric CAD library for the parts every FTC team ends up remodeling from scratch each season. Tweak a few parameters and get what you need:</p>
+                    <ul>
+                        <li>Team number plates</li>
+                        <li>Battery stations</li>
+                        <li>Driver station setups</li>
+                    </ul>
+                    <p>Free for any team to use and adapt.</p>
+                </div>
+            </div>
+            </div>
+        </div>
     </div>
 
-    <div id="modal-v1" class="modal">
-        <div class="modal-content"><span class="close-btn" onclick="closeModal('modal-v1')">&times;</span><h2>FTC Decode Robot V1</h2><p>[Project description...]</p></div>
-    </div>
+    <div id="modal-ftc" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+            <span class="close-btn" onclick="closeModal('modal-ftc')">&times;</span>
+            <h2>FTC Decode Robot</h2>
+            <p class="modal-meta">Team 19498 · Mechanical Design Lead / Software Lead / Systems Engineer · Sept 2025 – Apr 2026</p>
+            <div class="iter-tabs">
+                <button type="button" class="iter-tab" data-iter="v0">V0</button>
+                <button type="button" class="iter-tab" data-iter="v1">V1</button>
+                <button type="button" class="iter-tab active" data-iter="v2">V2</button>
+            </div>
+            </div>
+            <div class="modal-body">
+            <div class="modal-layout">
+                <div class="modal-media">
+                    <img id="ftc-iter-img" src="image/robot v2.png" alt="FTC Decode Robot V2" class="responsive-img">
+                </div>
+                <div class="modal-text">
+                    <div class="iter-panel" id="iter-v0">
+                        <h3>V0 — Prototype</h3>
+                        <p>Initial proof of concept focusing on basic chassis mechanics and layout.</p>
+                    </div>
+                    <div class="iter-panel" id="iter-v1">
+                        <h3>V1 — First Competition Build</h3>
+                        <p>Evolved the V0 prototype into a first complete, competition-ready robot.</p>
+                    </div>
+                    <div class="iter-panel active" id="iter-v2">
+                        <h3>V2 — Competition Robot</h3>
+                        <p>Set the <span class="highlight">Canadian scoring record</span> for the Decode season.</p>
+                        <h2>Technical Stack & Tooling</h2>
+                        <ul>
+                            <li><strong>CAD & Simulation:</strong> Onshape, Custom Assembly Configurator, Finite Element Analysis (FEA) for pocketed plates.</li>
+                            <li><strong>Manufacturing:</strong> CNC Routing (0.25" Polycarbonate, 4mm 6061 Aluminum), 3D Printing (Markforged Onyx / PETG), Laser Cutting.</li>
+                            <li><strong>Control & Navigation:</strong> Java, Android Studio, Road Runner (Motion Profiling), OpenCV (Pipeline Tuning), Three-Wheel Localized Odometry, PID control loops.</li>
+                            <li><strong>Hardware Ecosystem:</strong> goBILDA 5203 Series Yellow Jacket Motors, Rev Robotics Control Hub, 24mm Viper Slide Kits.</li>
+                        </ul>
 
-    <div id="modal-v0" class="modal">
-        <div class="modal-content"><span class="close-btn" onclick="closeModal('modal-v0')">&times;</span><h2>FTC Decode Prototype (V0)</h2><p>Initial proof of concept focusing on basic chassis mechanics and layout...</p></div>
-    </div>
+                        <h2>Core Subsystems</h2>
 
-    <div id="modal-drone" class="modal">
-        <div class="modal-content"><span class="close-btn" onclick="closeModal('modal-drone')">&times;</span><h2>Custom DIY Drone</h2><p>[Project description...]</p></div>
+                        <h3>1. Drivetrain & Localization</h3>
+                        <ul>
+                            <li>Designed a <span class="highlight">4-motor Mecanum drivetrain</span> geared at <span class="highlight">19.2:1 (312 RPM)</span>, balancing maximum sprint speed with high pushing torque.</li>
+                            <li>Fabricated a custom spring-loaded suspension rig for <span class="highlight">three-wheel dead-wheel odometry pods</span>, maintaining constant floor contact.</li>
+                            <li><strong>Result:</strong> Achieved a repeatable tracking error of <span class="highlight">under 0.5 inches</span> across a 30-second autonomous pathing routine.</li>
+                        </ul>
+
+                        <h3>2. Rigging & Multi-Stage Lift System</h3>
+                        <ul>
+                            <li>Engineered a <span class="highlight">continuous-backstring rigging system</span> using 4-stage heavy-duty linear slides driven by a 435 RPM motor with a custom-turned winch drum.</li>
+                            <li>Utilized <span class="highlight">FEA testing</span> to pocket the aluminum side plates, reducing structural weight by <span class="highlight">18%</span> without sacrificing torsional rigidity.</li>
+                            <li><strong>Result:</strong> Reduced full-extension vertical travel time to <span class="highlight">0.9 seconds</span>, increasing scoring capacity during the End Game period.</li>
+                        </ul>
+
+                        <h3>3. Active Intake & Smart Grabber</h3>
+                        <ul>
+                            <li>Prototyped a <span class="highlight">compliant-wheel intake</span> using 35A durometer TPU rollers to handle variations in game element alignment.</li>
+                            <li>Integrated a <span class="highlight">Rev Color Sensor V2</span> inside the bucket structure to automate intake motor shutoff immediately upon element collection.</li>
+                            <li><strong>Result:</strong> Eliminated driver reaction lag, reducing element collection time to an average of <span class="highlight">0.4 seconds per pickup</span>.</li>
+                        </ul>
+
+                        <h2>Performance</h2>
+                        <table class="spec-table">
+                            <tr><th>Autonomous consistency</th><td>92% (target 85%)</td></tr>
+                            <tr><th>Robot weight</th><td>36.5 lbs (target &lt; 42)</td></tr>
+                            <tr><th>Cycle speed</th><td>11.2 sec (target 15)</td></tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
     </div>
 
     <div id="modal-microbit" class="modal">
-        <div class="modal-content"><span class="close-btn" onclick="closeModal('modal-microbit')">&times;</span><h2>Wireless micro:bit Car</h2><p>[Project description...]</p></div>
+        <div class="modal-content">
+            <div class="modal-header">
+            <span class="close-btn" onclick="closeModal('modal-microbit')">&times;</span>
+            <h2>Wireless micro:bit Car</h2>
+            </div>
+            <div class="modal-body">
+            <div class="modal-layout">
+                <div class="modal-media">
+                    <img src="image/microbit.jpg" alt="micro:bit car" class="responsive-img">
+                </div>
+                <div class="modal-text">
+                    <p class="modal-meta">2&times; micro:bit · 3D-printed chassis</p>
+                    <p>Two micro:bits talking over radio — one as the controller, one on the car. Self-designed 3D-printed chassis with basic DC motors.</p>
+                    <p>A simple platform for messing around with wireless control.</p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-5dof" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+            <span class="close-btn" onclick="closeModal('modal-5dof')">&times;</span>
+            <h2>5 DOF Autonomous Arm</h2>
+            </div>
+            <div class="modal-body">
+            <div class="modal-layout">
+                <div class="modal-media">
+                    <img src="placeholder.jpg" alt="5 DOF autonomous arm" class="responsive-img">
+                </div>
+                <div class="modal-text">
+                    <p class="modal-meta">Standard hobbyist servos</p>
+                    <p>A 5 degree-of-freedom arm that does pick-and-place on its own, using vision to find objects.</p>
+                    <p>Still characterizing it — reach, repeatability, and cycle time numbers coming.</p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-racecar" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+            <span class="close-btn" onclick="closeModal('modal-racecar')">&times;</span>
+            <h2>RC Race Car</h2>
+            </div>
+            <div class="modal-body">
+            <div class="modal-layout">
+                <div class="modal-media">
+                    <img src="placeholder.jpg" alt="RC race car" class="responsive-img">
+                </div>
+                <div class="modal-text">
+                    <p class="modal-meta">Chassis tuning · Motor control</p>
+                    <p>Custom suspension, Ackermann steering geometry, a differential, and aero bodywork — built for handling, not just straight-line speed.</p>
+                    <p>Theoretical top speed: 15 mph.</p>
+                </div>
+            </div>
+            </div>
+        </div>
     </div>
 
     <section id="achievements" class="container section">
@@ -158,7 +334,7 @@
                 <ul class="achievement-list">
                     <li>🏆 2025 FTC Ontario Championship Winner + Canada Record Holder</li>
                     <li>🥇 2025 FTC Waterloo + Central Toronto Qualifier Winner</li>
-                    <li>📐 2024 AIME Qualifier, 3x COMC, 1x CSMC School Champion</li>
+                    <li>📐 2024 AIME Qualifier, CSMC/Euclid Honour Roll</li>
                 </ul>
             </div>
             
@@ -171,17 +347,39 @@
     <footer id="contact">
         <div class="footer-content fade-in">
             <h2>Let's Connect</h2>
-            <p>Email: <a href="mailto:jerrycywong@gmail.com" class="footer-email">jerrycywong@gmail.com</a></p>
+            <p>Email: <a href="mailto:j444wong@gmail.com" class="footer-email">j444wong@gmail.com</a></p>
             <div class="socials">
                 <a href="https://www.linkedin.com/in/jerry-wong-251589347/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                 <a href="https://github.com/lptoggled" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="mailto:jerrycywong@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                <a href="https://discord.com/users/YOUR_DISCORD_ID" target="_blank" aria-label="Discord"><i class="fab fa-discord"></i></a>
+                <a href="mailto:j444wong@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://discord.com/users/lptoggled" target="_blank" aria-label="Discord"><i class="fab fa-discord"></i></a>
             </div>
             <p class="copyright">&copy; 2026 Jerry Wong. All rights reserved.</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
+    <script>
+    // FTC iteration tabs: switch panel + image together
+    (function () {
+        var iterImages = {
+            v0: { src: 'placeholder.jpg',       alt: 'FTC Decode Robot V0 prototype' },
+            v1: { src: 'image/robot v1.png',   alt: 'FTC Decode Robot V1' },
+            v2: { src: 'image/robot v2.png',   alt: 'FTC Decode Robot V2' }
+        };
+        document.querySelectorAll('.iter-tab').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var modal = btn.closest('.modal-content');
+                modal.querySelectorAll('.iter-tab').forEach(function (b) { b.classList.remove('active'); });
+                modal.querySelectorAll('.iter-panel').forEach(function (p) { p.classList.remove('active'); });
+                btn.classList.add('active');
+                modal.querySelector('#iter-' + btn.dataset.iter).classList.add('active');
+                var img = modal.querySelector('.modal-media img');
+                var data = iterImages[btn.dataset.iter];
+                if (img && data) { img.src = data.src; img.alt = data.alt; }
+            });
+        });
+    })();
+    </script>
 </body>
 </html>
