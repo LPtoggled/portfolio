@@ -48,7 +48,7 @@
                 <p>I have led a team of 13 to the FIRST Championship and currently study AMath at University of Waterloo</p>
             </div>
             <div class="about-image-container">
-                <img src="your-profile-pic.jpg" alt="Jerry working on a robot" class="responsive-img">
+                <img src="image/profile-pic.jpg" alt="Jerry working on a robot" class="responsive-img">
             </div>
         </div>
     </section>
@@ -58,16 +58,56 @@
         
         <div class="grid">
             
+            <div class="card fade-in project-card" onclick="openModal('modal-ftc')">
+                <div class="project-image-container"><img src="image/robot v2.png" alt="FTC Decode Robot" class="responsive-img"></div>
+                <div class="card-content">
+                    <h3>FTC Decode Robot</h3>
+                    <span class="btn-text">View Details &rarr;</span>
+                </div>
+            </div>
+
             <div class="card fade-in project-card" onclick="openModal('modal-swerve')">
-                <div class="project-image-container"><img src="placeholder.jpg" alt="Swerve" class="responsive-img"></div>
+                <div class="project-image-container"><img src="image/swerve.png" alt="Swerve" class="responsive-img"></div>
                 <div class="card-content">
                     <h3>Co-axial Swerve Drive</h3>
                     <span class="btn-text">View Details &rarr;</span>
                 </div>
             </div>
 
+            <div class="card fade-in project-card" onclick="openModal('modal-5dof')">
+                <div class="project-image-container"><img src="placeholder.jpg" alt="5 DOF Autonomous Arm" class="responsive-img"></div>
+                <div class="card-content">
+                    <h3>5 DOF Autonomous Arm</h3>
+                    <span class="btn-text">View Details &rarr;</span>
+                </div>
+            </div>
+
+            <div class="card fade-in project-card" onclick="openModal('modal-weekfare')">
+                <div class="project-image-container"><img src="image/weekfare.jpg" alt="Weekfare" class="responsive-img"></div>
+                <div class="card-content">
+                    <h3>Weekfare</h3>
+                    <span class="btn-text">View Details &rarr;</span>
+                </div>
+            </div>
+
+            <div class="card fade-in project-card" onclick="openModal('modal-driftapart')">
+                <div class="project-image-container"><img src="image/drift-apart.png" alt="Drift Apart (or Don't)" class="responsive-img"></div>
+                <div class="card-content">
+                    <h3>Drift Apart (or Don't)</h3>
+                    <span class="btn-text">View Details &rarr;</span>
+                </div>
+            </div>
+
+            <div class="card fade-in project-card" onclick="openModal('modal-racecar')">
+                <div class="project-image-container"><img src="image/f1.png" alt="RC Race Car" class="responsive-img"></div>
+                <div class="card-content">
+                    <h3>RC Race Car</h3>
+                    <span class="btn-text">View Details &rarr;</span>
+                </div>
+            </div>
+
             <div class="card fade-in project-card" onclick="openModal('modal-arise')">
-                <div class="project-image-container"><img src="placeholder.jpg" alt="ARISE Simulator" class="responsive-img"></div>
+                <div class="project-image-container"><img src="image/arise.jpg" alt="ARISE Simulator" class="responsive-img"></div>
                 <div class="card-content">
                     <h3>ARISE FLL Simulator</h3>
                     <span class="btn-text">View Details &rarr;</span>
@@ -82,14 +122,6 @@
                 </div>
             </div>
 
-            <div class="card fade-in project-card" onclick="openModal('modal-ftc')">
-                <div class="project-image-container"><img src="image/robot v2.png" alt="FTC Decode Robot" class="responsive-img"></div>
-                <div class="card-content">
-                    <h3>FTC Decode Robot</h3>
-                    <span class="btn-text">View Details &rarr;</span>
-                </div>
-            </div>
-
             <div class="card fade-in project-card" onclick="openModal('modal-microbit')">
                 <div class="project-image-container"><img src="image/microbit.jpg" alt="micro:bit car" class="responsive-img"></div>
                 <div class="card-content">
@@ -98,98 +130,8 @@
                 </div>
             </div>
 
-            <div class="card fade-in project-card" onclick="openModal('modal-5dof')">
-                <div class="project-image-container"><img src="placeholder.jpg" alt="5 DOF Autonomous Arm" class="responsive-img"></div>
-                <div class="card-content">
-                    <h3>5 DOF Autonomous Arm</h3>
-                    <span class="btn-text">View Details &rarr;</span>
-                </div>
-            </div>
-
-            <div class="card fade-in project-card" onclick="openModal('modal-racecar')">
-                <div class="project-image-container"><img src="placeholder.jpg" alt="RC Race Car" class="responsive-img"></div>
-                <div class="card-content">
-                    <h3>RC Race Car</h3>
-                    <span class="btn-text">View Details &rarr;</span>
-                </div>
-            </div>
-
         </div>
     </section>
-
-    <div id="modal-swerve" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-            <span class="close-btn" onclick="closeModal('modal-swerve')">&times;</span>
-            <h2>Co-axial Swerve Drive</h2>
-            </div>
-            <div class="modal-body">
-            <div class="modal-layout">
-                <div class="modal-media">
-                    <img src="placeholder.jpg" alt="Co-axial swerve drive module" class="responsive-img">
-                </div>
-                <div class="modal-text">
-                    <p class="modal-meta">Summer 2025 · Mechanical design + programming</p>
-                    <p>An FTC-legal swerve module — drive and steering share one axis, so each wheel rotates a full 360&deg;. I designed the module in CAD (Fusion 360 / Onshape) and wrote the control code in Java.</p>
-                    <p>An absolute encoder on the steering axis means the robot always knows its wheel orientation on boot — no homing routine. Steering runs on PID loops tuned against encoder feedback.</p>
-                    <table class="spec-table">
-                        <tr><th>Steering latency</th><td>0.1 s</td></tr>
-                        <tr><th>Top speed</th><td>3.5 m/s</td></tr>
-                        <tr><th>Motors</th><td>goBILDA</td></tr>
-                        <tr><th>Control hub</th><td>REV Control Hub</td></tr>
-                    </table>
-                </div>
-            </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="modal-arise" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-            <span class="close-btn" onclick="closeModal('modal-arise')">&times;</span>
-            <h2>ARISE FLL Simulator</h2>
-            </div>
-            <div class="modal-body">
-            <div class="modal-layout">
-                <div class="modal-media">
-                    <img src="placeholder.jpg" alt="ARISE FLL Simulator" class="responsive-img">
-                </div>
-                <div class="modal-text">
-                    <p class="modal-meta">Solo project · Unity (C#)</p>
-                    <p>A simulator for FLL teams. Build a robot from virtual parts, write code for it, and run autonomous routines on a virtual field — all before touching physical hardware.</p>
-                    <p>Handy for testing strategies and iterating on autonomous programs without needing the robot in front of you.</p>
-                </div>
-            </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="modal-cad" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-            <span class="close-btn" onclick="closeModal('modal-cad')">&times;</span>
-            <h2>Open-Source Parametric FTC CAD</h2>
-            </div>
-            <div class="modal-body">
-            <div class="modal-layout">
-                <div class="modal-media">
-                    <img src="image/onshape.png" alt="Parametric CAD library" class="responsive-img">
-                </div>
-                <div class="modal-text">
-                    <p class="modal-meta">Onshape configurations · Open source</p>
-                    <p>A parametric CAD library for the parts every FTC team ends up remodeling from scratch each season. Tweak a few parameters and get what you need:</p>
-                    <ul>
-                        <li>Team number plates</li>
-                        <li>Battery stations</li>
-                        <li>Driver station setups</li>
-                    </ul>
-                    <p>Free for any team to use and adapt.</p>
-                </div>
-            </div>
-            </div>
-        </div>
-    </div>
 
     <div id="modal-ftc" class="modal">
         <div class="modal-content">
@@ -219,7 +161,7 @@
                     </div>
                     <div class="iter-panel active" id="iter-v2">
                         <h3>V2 — Competition Robot</h3>
-                        <p>Set the <span class="highlight">Canadian scoring record</span> for the Decode season.</p>
+                        <p>Set the <a href="https://www.youtube.com/watch?v=2yqwUCPhk14"><span class="highlight">Canadian scoring record</span></a> for the Decode season.</p>
                         <h2>Technical Stack & Tooling</h2>
                         <ul>
                             <li><strong>CAD & Simulation:</strong> Onshape, Custom Assembly Configurator, Finite Element Analysis (FEA) for pocketed plates.</li>
@@ -264,21 +206,27 @@
         </div>
     </div>
 
-    <div id="modal-microbit" class="modal">
+    <div id="modal-swerve" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-            <span class="close-btn" onclick="closeModal('modal-microbit')">&times;</span>
-            <h2>Wireless micro:bit Car</h2>
+            <span class="close-btn" onclick="closeModal('modal-swerve')">&times;</span>
+            <h2>Co-axial Swerve Drive</h2>
             </div>
             <div class="modal-body">
             <div class="modal-layout">
                 <div class="modal-media">
-                    <img src="image/microbit.jpg" alt="micro:bit car" class="responsive-img">
+                    <img src="image/swerve.png" alt="Co-axial swerve drive module" class="responsive-img">
                 </div>
                 <div class="modal-text">
-                    <p class="modal-meta">2&times; micro:bit · 3D-printed chassis</p>
-                    <p>Two micro:bits talking over radio — one as the controller, one on the car. Self-designed 3D-printed chassis with basic DC motors.</p>
-                    <p>A simple platform for messing around with wireless control.</p>
+                    <p class="modal-meta">Summer 2025 · Mechanical design + programming</p>
+                    <p>An FTC-legal swerve module — drive and steering share one axis, so each wheel rotates a full 360&deg;. I designed the module in CAD (Fusion 360 / Onshape) and wrote the control code in Java.</p>
+                    <p>An absolute encoder on the steering axis means the robot always knows its wheel orientation on boot — no homing routine. Steering runs on PID loops tuned against encoder feedback.</p>
+                    <table class="spec-table">
+                        <tr><th>Steering latency</th><td>0.1 s</td></tr>
+                        <tr><th>Top speed</th><td>3.5 m/s</td></tr>
+                        <tr><th>Motors</th><td>goBILDA</td></tr>
+                        <tr><th>Control hub</th><td>REV Control Hub</td></tr>
+                    </table>
                 </div>
             </div>
             </div>
@@ -306,6 +254,50 @@
         </div>
     </div>
 
+    <div id="modal-weekfare" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+            <span class="close-btn" onclick="closeModal('modal-weekfare')">&times;</span>
+            <h2>Weekfare</h2>
+            </div>
+            <div class="modal-body">
+            <div class="modal-layout">
+                <div class="modal-media">
+                    <img src="image/weekfare.jpg" alt="Weekfare" class="responsive-img">
+                </div>
+                <div class="modal-text">
+                    <p class="modal-meta">HTML/CSS/JS · Supabase (Postgres + Auth) · Deployed on Vercel</p>
+                    <p>A recipe library with 5,000+ recipes, a weekly meal planner, and an auto-generated grocery list. Typo-tolerant, ingredient-aware search; drag-and-drop meal planning; a consolidated shopping list that rescales with servings.</p>
+                    <p>Also has a cook mode with step timers and a favourites system with live counts — phone-first design throughout.</p>
+                    <p><a href="https://weekfare.vercel.app/index.html" target="_blank">Visit the live site &rarr;</a></p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-driftapart" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+            <span class="close-btn" onclick="closeModal('modal-driftapart')">&times;</span>
+            <h2>Drift Apart (or Don't)</h2>
+            </div>
+            <div class="modal-body">
+            <div class="modal-layout">
+                <div class="modal-media">
+                    <img src="drift-apart.png" alt="Drift Apart (or Don't)" class="responsive-img">
+                </div>
+                <div class="modal-text">
+                    <p class="modal-meta">UWaterloo Game Jam · Fall 2026 · Unity · 2-player co-op</p>
+                    <p>You and a friend are ejected into space, tied together by a rope — get back to your spaceship. Both players share one keyboard (WASD + arrow keys), navigating asteroids and puzzles while collecting O2 and fuel tanks to stay alive.</p>
+                    <p>If the rope snaps, jet back toward each other before you drift apart for good.</p>
+                    <p><a href="https://lptoggled.itch.io/drift-away-or-dont" target="_blank">Play it on itch.io &rarr;</a></p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
     <div id="modal-racecar" class="modal">
         <div class="modal-content">
             <div class="modal-header">
@@ -315,12 +307,80 @@
             <div class="modal-body">
             <div class="modal-layout">
                 <div class="modal-media">
-                    <img src="placeholder.jpg" alt="RC race car" class="responsive-img">
+                    <img src="image/f1.png" alt="RC race car" class="responsive-img">
                 </div>
                 <div class="modal-text">
                     <p class="modal-meta">Chassis tuning · Motor control</p>
                     <p>Custom suspension, Ackermann steering geometry, a differential, and aero bodywork — built for handling, not just straight-line speed.</p>
                     <p>Theoretical top speed: 15 mph.</p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-arise" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+            <span class="close-btn" onclick="closeModal('modal-arise')">&times;</span>
+            <h2>ARISE FLL Simulator</h2>
+            </div>
+            <div class="modal-body">
+            <div class="modal-layout">
+                <div class="modal-media">
+                    <img src="image/arise.jpg" alt="ARISE FLL Simulator" class="responsive-img">
+                </div>
+                <div class="modal-text">
+                    <p class="modal-meta">Solo project · Unity (C#)</p>
+                    <p>A simulator for FLL teams. Build a robot from virtual parts, write code for it, and run autonomous routines on a virtual field — all before touching physical hardware.</p>
+                    <p>Handy for testing strategies and iterating on autonomous programs without needing the robot in front of you.</p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-cad" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+            <span class="close-btn" onclick="closeModal('modal-cad')">&times;</span>
+            <h2>Open-Source Parametric FTC CAD</h2>
+            </div>
+            <div class="modal-body">
+            <div class="modal-layout">
+                <div class="modal-media">
+                    <img src="image/onshape.png" alt="Parametric CAD library" class="responsive-img">
+                </div>
+                <div class="modal-text">
+                    <p class="modal-meta">Onshape configurations · Open source</p>
+                    <p>A parametric CAD library for the parts every FTC team ends up remodeling from scratch each season. Tweak a few parameters and get what you need:</p>
+                    <ul>
+                        <li>Team number plates</li>
+                        <li>Battery stations</li>
+                        <li>Driver station setups</li>
+                    </ul>
+                    <p>Free for any team to use and adapt.</p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-microbit" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+            <span class="close-btn" onclick="closeModal('modal-microbit')">&times;</span>
+            <h2>Wireless micro:bit Car</h2>
+            </div>
+            <div class="modal-body">
+            <div class="modal-layout">
+                <div class="modal-media">
+                    <img src="image/microbit.jpg" alt="micro:bit car" class="responsive-img">
+                </div>
+                <div class="modal-text">
+                    <p class="modal-meta">2&times; micro:bit · 3D-printed chassis</p>
+                    <p>Two micro:bits talking over radio — one as the controller, one on the car. Self-designed 3D-printed chassis with basic DC motors.</p>
+                    <p>A simple platform for messing around with wireless control.</p>
                 </div>
             </div>
             </div>
